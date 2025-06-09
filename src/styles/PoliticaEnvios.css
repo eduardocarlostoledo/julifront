@@ -1,0 +1,44 @@
+.envios-container {
+    max-width: 1200px;
+    margin: 200px auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .envios-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #101629;
+    margin-bottom: 40px;
+  }
+  
+  .envios-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .envios-card {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .envios-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .envios-card h2 {
+    font-size: 1.4rem;
+    color: #263d23;
+    margin-bottom: 10px;
+  }
+  
+  .envios-card p {
+    color: #555;
+    line-height: 1.6;
+  }
+  

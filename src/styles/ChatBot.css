@@ -1,0 +1,113 @@
+/* Estilos ajustados al branding de HALLPA */
+:root {
+  --color-pink: #FEC9D1;
+  --color-lavender: #B197C7;
+  --color-olive: #768562;
+  --color-black: #2A2A2A;
+  --color-white: #FFFFFF;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-text: #2A2A2A;
+  --color-primary: #B197C7;
+  --color-accent: #768562;
+  --color-surface: #FDFDFD;
+  --color-bg: #FEC9D1;
+  --box-shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --font-family-base: 'Poppins', sans-serif;
+  --transition: all 0.3s ease;
+  --color-lavender-gray: #d8cfe7;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-medium);
+  overflow: hidden;
+  font-family: var(--font-family-base);
+}
+
+.chat-header {
+  background: var(--color-lavender);
+  color: var(--color-white);
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.chat-box {
+  height: 300px;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--color-bg);
+  scroll-behavior: smooth;
+}
+
+.chat-message {
+  max-width: 75%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background: var(--color-lavender);
+  color: var(--color-white);
+}
+
+.chat-message.bot {
+  align-self: flex-start;
+  background: var(--color-olive);
+  color: var(--color-white);
+}
+
+.typing-indicator {
+  font-size: 12px;
+  color: var(--color-black);
+  text-align: left;
+  padding-left: 10px;
+  font-style: italic;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid var(--color-lavender-gray);
+  padding: 10px;
+  background: var(--color-surface);
+}
+
+.input-field {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+.send-button {
+  background: var(--color-olive);
+  color: var(--color-white);
+  border: none;
+  padding: 8px 12px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.send-button:hover {
+  background: var(--color-lavender);
+}

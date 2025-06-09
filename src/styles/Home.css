@@ -1,0 +1,144 @@
+:root {
+  --color-background: #fff0f4;
+  --color-primary: #c69acb;
+  --color-secondary: #fcd5e8;
+  --color-accent: #6c4b86;
+  --color-text: #2a2a2a;
+  --color-white: #ffffff;
+  --color-green: #7ca38c;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text);
+}
+
+.home-container {
+  padding: 30px 20px;
+  max-width: 1280px;
+  margin: auto;
+  text-align: center;
+}
+
+.hero-banner {
+  background-color: var(--color-secondary);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin-bottom: 60px;
+  margin-top: 320px;
+}
+
+h2, h3 {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.value-card {
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  width: 300px;
+}
+
+.value-icon {
+  font-size: 36px;
+  color: var(--color-green);
+  margin-bottom: 12px;
+}
+
+.values-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.product-card {
+  width: 280px;
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-discount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e63946;
+  color: white;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.free-shipping-tag {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  background-color: var(--color-green);
+  color: white;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.product-info h3 {
+  margin-top: 12px;
+  font-size: 1rem;
+  min-height: 48px;
+}
+
+.current-price {
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.contact-button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.contact-button:hover {
+  background-color: var(--color-accent);
+}
+
+.chatbot-section {
+  background-color: var(--color-secondary);
+  padding: 40px;
+  border-radius: 16px;
+  margin-top: 40px;
+}

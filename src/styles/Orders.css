@@ -1,0 +1,122 @@
+/* Ordenes.css - responsive profesional */
+
+.Orders-container {
+  margin-top: 180px;
+  padding: 1rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.Orders-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #101629;
+  margin-bottom: 1.5rem;
+  text-decoration: underline;
+}
+
+.Orders-searchInput {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+/* TABLA EN DESKTOP */
+.Orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  display: table;
+}
+
+.Orders-table th,
+.Orders-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.Orders-table th {
+  background-color: #101629;
+  color: white;
+}
+
+/* ESTADOS */
+.Orders-status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.Orders-status.approved,
+.Orders-status.enviada {
+  background-color: #4caf50;
+}
+
+.Orders-status.pending,
+.Orders-status.pendiente {
+  background-color: #ffc107;
+}
+
+.Orders-status.rejected,
+.Orders-status.cancelada {
+  background-color: #f44336;
+}
+
+/* IMAGEN PRODUCTO */
+.Orders-productImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+/* ✅ TARJETAS RESPONSIVAS EN MOBILE */
+@media (max-width: 768px) {
+  .Orders-table {
+    display: none;
+  }
+
+  .Orders-card {
+    background-color: white;
+    color: var(--color-black);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .Orders-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #101629;
+  }
+
+  .Orders-card p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+  }
+
+  .Orders-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .Orders-card li {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .Orders-productInfo {
+    font-size: 0.85rem;
+  }
+}
