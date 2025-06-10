@@ -142,3 +142,11 @@ h2, h3 {
   border-radius: 16px;
   margin-top: 40px;
 }
+
+@media (max-width: 370px) { 
+
+  .credits-cards-image img {
+    width: 80%;
+  }
+  
+}
