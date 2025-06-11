@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
 import '../styles/Footer.css';
-import logo from '../img/logoinvertido.png';
+import logo from '../images/huallpa-logo.png';
 
 export const Footer = () => {
   const location = useLocation();
@@ -83,6 +83,17 @@ export const Footer = () => {
         </div>
         <div>
           <p>&copy; {new Date().getFullYear()} July Marroquinería - TODOS LOS DERECHOS RESERVADOS</p>
+          <p>
+    Desarrollado por{" "}
+    <a
+      href="https://toledoconsultora.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: "#c69e5d", textDecoration: "none", fontWeight: "bold" }}
+    >
+      Toledo Consultora
+    </a>
+  </p>
         </div>
         <div>
           <img src={logo} alt="July Marroquinería logo" className="footer-logo-small" />

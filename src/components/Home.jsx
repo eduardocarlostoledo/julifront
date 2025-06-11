@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { FaLeaf, FaShoppingBag, FaWhatsapp, FaStar, FaShieldAlt } from "react-icons/fa";
 import "../styles/Home.css";
-import { FaLeaf, FaShoppingBag, FaWhatsapp, FaStar } from "react-icons/fa";
 
 import local from "../images/local.png";
 import artesanal1 from "../images/artesanal1.png";
 import artesanal2 from "../images/artesanal2.png";
 import artesanal3 from "../images/artesanal3.png";
-import { ChatBot } from "./ChatBot";
 import tarjetas from "../images/tarjetas.png";
+import { ChatBot } from "./ChatBot";
+import relato1 from "../images/relato1.png";
+import relato2 from "../images/relato2.png";
+import relato3 from "../images/relato3.png";
+import relato4 from "../images/relato4.png";
 
 const featuredProducts = [
   {
@@ -35,22 +39,79 @@ const featuredProducts = [
     discount: "25% OFF",
     freeShipping: true,
     img: artesanal3,
-  },  
+  },
 ];
 
 export const Home = () => {
-  const handleClick = () => {
+  const handleWhatsApp = () => {
     window.location.href = "https://wa.me/5493855915327";
   };
 
   return (
     <div className="home-container">
-      <motion.section className="hero-banner" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
-        <img src={local} alt="Huallpa Marroquinería"  />
+
+      <div className="promo-marquee">
+        <p>
+          💳 6 CUOTAS SIN INTERÉS ¡EN TODOS LOS PRODUCTOS! - 📦 ENVÍO GRATIS A TODO EL PAÍS A PARTIR DE $170.000 - 🇦🇷 ARTESANOS DEL CUERO DESDE 1969
+        </p>
+      </div>
+      
+      <motion.section
+        className="hero-banner"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        style={{ position: "relative", overflow: "hidden" }}
+      >
+        <div className="hero-content">
+          <h1>La artesanía que habla por vos</h1>
+          <p>Marroquinería premium: elegancia, durabilidad y estilo en cada pieza.</p>
+          <motion.button
+            className="hero-cta"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.location.href = "/coleccion"}
+          >
+            Ver colección
+          </motion.button>
+        </div>
+        <img
+          src={local}
+          alt="Tienda Huallpa Marroquinería"
+          className="hero-banner-img"
+        />
+        
       </motion.section>
+      
+<motion.section
+        className="hero-secure-badge"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        style={{ position: "relative", overflow: "hidden" }}
+      >
+      <div className="secure-badge">
+          <FaShieldAlt /> Sitio Seguro / Compra Protegida
+        </div>
+</motion.section>
+
+      <section className="founder-section">
+        <h3 className="home-titulocontrapelo">Conocé a la fundadora</h3>
+        <div className="founder-card">
+          <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="48" stroke="#c69e5d" strokeWidth="4" fill="#fff" />
+            <circle cx="50" cy="38" r="12" fill="#d3b7cc" />
+            <path d="M25 80c5-20 45-20 50 0" stroke="#c69e5d" strokeWidth="4" fill="none" />
+          </svg>
+          <p>"Cada pieza nace de mis manos y mi corazón. Quiero que sientas esa conexión."</p>
+          <strong>- Fundadora de HALLPA</strong>
+        </div>
+      </section>
+
+      <hr className="sutil-separator" />
 
       <section className="values-section">
-        <h3 className="home-titulocontrapelo" style={{color:"white"}} >Autenticidad Artesanal</h3>
+        <h3 className="home-titulocontrapelo">Autenticidad Artesanal</h3>
         <div className="values-grid">
           <div className="value-card">
             <FaLeaf className="value-icon" />
@@ -70,12 +131,23 @@ export const Home = () => {
         </div>
       </section>
 
+      <section className="testimonials">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div className="testimonial-slider">
+          {[relato1, relato2, relato3, relato4].map((img, index) => (
+            <div className="testimonial-card-image" key={index}>
+              <img src={img} alt={`Comentario cliente ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="featured-products">
         <h2 className="home-titulocontrapelo">Colección Destacada</h2>
         <p>Elegí tu bolso ideal para cada ocasión</p>
         <div className="products-grid">
           {featuredProducts.map((product) => (
-            <motion.div key={product.id} className="product-card" whileHover={{ scale: 1.03 }}>
+            <motion.div key={product.id} className="product-card rounded-highlight" whileHover={{ scale: 1.03 }}>
               <img src={product.img} alt={product.name} className="product-image" />
               <div className="product-discount">{product.discount}</div>
               {product.freeShipping && (
@@ -92,58 +164,49 @@ export const Home = () => {
         </div>
       </section>
 
-      <motion.section className="chatbot-section" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
+      <motion.section className="chatbot-section" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
         <h3>¿Consultas o pedidos personalizados?</h3>
-        <p>Escribinos directamente</p>
-        <motion.button className="contact-button" onClick={handleClick} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <p>Estamos en WhatsApp para ayudarte</p>
+        <motion.button
+          className="contact-button"
+          onClick={handleWhatsApp}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           <FaWhatsapp style={{ marginRight: "10px" }} /> Contactanos por WhatsApp
         </motion.button>
       </motion.section>
 
-       {/* Asistente Virtual */}
       <motion.section
         className="chatbot-section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-        <h3>¿Necesitás ayuda? </h3>
-        <p>Nuestros Asesores te contestan inmediatamente</p>
-        <p> </p>
+        <h3>¿Necesitás ayuda en tiempo real?</h3>
+        
         <div className="chatbot-container">
           <ChatBot />
         </div>
       </motion.section>
 
-      {/* Contacto */}
-      {/* Contacto */}
       <section className="contact-section">
-        <h3  className="home-titulocontrapelo">
-          ¿Tenés preguntas? Estamos aquí para ayudarte
-        </h3>
-
+        <h3 className="home-titulocontrapelo">¿Tenés preguntas? Estamos para ayudarte</h3>
         <motion.button
           className="contact-button"
-          onClick={handleClick}
+          onClick={handleWhatsApp}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           Escribinos por WhatsApp
         </motion.button>
-        <h3 className="home-titulocontrapelo">
-          {" "}
-          Aceptamos Todos los Medios de Pago
-        </h3>
+        <h3 className="home-titulocontrapelo">Aceptamos todos los medios de pago</h3>
         <img
           src={tarjetas}
-          alt="tarjetas de crédito"
+          alt="Medios de pago aceptados"
           className="credit-cards-image"
         />
       </section>
-
-
     </div>
-
-    
   );
 };

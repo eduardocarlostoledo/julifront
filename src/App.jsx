@@ -58,7 +58,7 @@ function App() {
   // }, [dispatch]);
 
   return (
-    <div className="App">
+    <div className="app">
       <ScrollToTop /> {/* 👈 Este es el truco */}
       {location.pathname === "/admin/Orders" ||
       location.pathname === "/admin/CreateProduct" ||
