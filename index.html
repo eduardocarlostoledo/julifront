@@ -15,8 +15,8 @@
   <meta property="og:image" content="https://july-marroquineria.netlify.app/assets/huallpa-logo-DVeACbd9.png" />
   <meta property="og:url" content="https://july-marroquineria.netlify.app" />
 
-  <!-- ✅ Content Security Policy recomendada -->
-  <meta http-equiv="Content-Security-Policy" content="
+  <!-- ✅ Content Security Policy recomendada raiz-->
+  <!-- <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self' https://sweetalert.js.org https://http2.mlstatic.com https://api.mercadopago.com https://sdk.mercadopago.com https://accounts.google.com https://ajax.googleapis.com https://accounts.google.com/gsi/client;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style;
@@ -27,8 +27,44 @@
     media-src 'self' https://res.cloudinary.com;
     form-action 'self' https://elgatonegropremium-back-production.up.railway.app https://july-marroquineria.netlify.app;
     object-src 'none';
-  " />
+  " /> -->
 
+  <!-- Generar nonce dinámico -->
+  <script>
+    (function() {
+      var nonce = Math.random().toString(36).substring(2, 15);
+      document.querySelectorAll("script[nonce-placeholder]").forEach(el => el.setAttribute("nonce", nonce));
+      document.querySelector('meta[http-equiv="Content-Security-Policy"]').setAttribute("content", 
+        `default-src 'self' https://sweetalert.js.org https://https://july-marroquineria.netlify.app https://elgatonegropremium-back-production.up.railway.app http://localhost:5173 http://localhost:3001  http://localhost:3001/cart/getcartclient/48 ;
+        script-src 'self' 'nonce-${nonce}' https://sweetalert.js.org https://http2.mlstatic.com https://api.mercadopago.com https://sdk.mercadopago.com https://apis.google.com https://accounts.google.com https://ajax.googleapis.com https://https://july-marroquineria.netlify.app http://localhost:5173 http://localhost:3001;
+        style-src 'self' 'nonce-${nonce}' https://fonts.googleapis.com https://accounts.google.com/gsi/style;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self' https://api.mercadopago.com https://sdk.mercadopago.com https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount https://elgatonegropremium-back-production.up.railway.app/users/auth/google http://localhost:3001/users/auth/google https://events.mercadopago.com https://api.mercadolibre.com/tracks https://events.mercadopago.com/v2/traffic-light;
+        img-src 'self' data: https://cdn-icons-png.flaticon.com https://sweetalert.js.org https://res.cloudinary.com https://upload.wikimedia.org;
+        frame-src 'self' https://sweetalert.js.org https://api.mercadopago.com https://sdk.mercadopago.com https://accounts.google.com https://elgatonegropremium-back-production.up.railway.app localhost:3000 locahost:3001;
+        media-src 'self' https://res.cloudinary.com;
+        child-src 'self' https://accounts.google.com;
+        form-action 'self' https://elgatonegropremium-back-production.up.railway.app;
+        object-src 'none';
+        report-uri /csp-violation-report;
+        report-to csp-endpoint;`
+      );
+    })();
+  </script>
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy">
+
+  <!-- Reporte de CSP -->
+  <meta http-equiv="Report-To" content='{"group":"csp-endpoint","max_age":10886400,"endpoints":[{"url":"https://https://july-marroquineria.netlify.app/csp-report"}]}' />
+
+  <!-- Otros encabezados de seguridad -->
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=()">
+
+  
   <!-- CSP Report URI -->
   <meta http-equiv="Report-To" content='{"group":"csp-endpoint","max_age":10886400,"endpoints":[{"url":"https://july-marroquineria.netlify.app/csp-report"}]}' />
 
