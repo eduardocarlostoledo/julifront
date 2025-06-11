@@ -201,7 +201,7 @@ export const NavBar = () => {
       {/* Botón de WhatsApp */}
       <a
         className="navbar-whatsapp"
-        href="https://wa.me/5493855915327"
+        href="https://wa.me/5493855015327"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"

@@ -44,7 +44,7 @@ const featuredProducts = [
 
 export const Home = () => {
   const handleWhatsApp = () => {
-    window.location.href = "https://wa.me/5493855915327";
+    window.location.href = "https://wa.me/5493855015327";
   };
 
   return (
