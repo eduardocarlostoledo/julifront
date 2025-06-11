@@ -91,11 +91,39 @@ export const Home = () => {
         style={{ position: "relative", overflow: "hidden" }}
       >
       <div className="secure-badge">
+        
           <FaShieldAlt /> Sitio Seguro / Compra Protegida
         </div>
 </motion.section>
 
+
+      <section className="featured-products">
+        
+        <h2 className="home-titulocontrapelo">Colección Destacada</h2>
+        <p>Elegí tu bolso ideal para cada ocasión</p>
+        <div className="products-grid">
+          {featuredProducts.map((product) => (
+            <motion.div key={product.id} className="product-card rounded-highlight" whileHover={{ scale: 1.03 }}>
+              <img src={product.img} alt={product.name} className="product-image" />
+              <div className="product-discount">{product.discount}</div>
+              {product.freeShipping && (
+                <div className="free-shipping-tag">ENVÍO GRATIS</div>
+              )}
+              <div className="product-info">
+                <h3>{product.name}</h3>
+                <div className="product-pricing">
+                  <span className="current-price">{product.price}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+
+
       <section className="founder-section">
+        <hr className="sutil-separator" />
         <h3 className="home-titulocontrapelo">Conocé a la fundadora</h3>
         <div className="founder-card">
           <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,9 +134,27 @@ export const Home = () => {
           <p>"Cada pieza nace de mis manos y mi corazón. Quiero que sientas esa conexión."</p>
           <strong>- Fundadora de HALLPA</strong>
         </div>
+        
       </section>
 
-      <hr className="sutil-separator" />
+      
+
+      
+
+      <motion.section className="chatbot-section" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
+        <h3>¿Consultas o pedidos personalizados?</h3>
+        <p>Estamos en WhatsApp para ayudarte</p>
+        <motion.button
+          className="contact-button"
+          onClick={handleWhatsApp}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FaWhatsapp style={{ marginRight: "10px" }} /> Contactanos por WhatsApp
+        </motion.button>
+      </motion.section>
+
+      
 
       <section className="values-section">
         <h3 className="home-titulocontrapelo">Autenticidad Artesanal</h3>
@@ -131,6 +177,9 @@ export const Home = () => {
         </div>
       </section>
 
+
+
+<hr className="sutil-separator" />
       <section className="testimonials">
         <h2>Lo que dicen nuestros clientes</h2>
         <div className="testimonial-slider">
@@ -141,42 +190,7 @@ export const Home = () => {
           ))}
         </div>
       </section>
-
-      <section className="featured-products">
-        <h2 className="home-titulocontrapelo">Colección Destacada</h2>
-        <p>Elegí tu bolso ideal para cada ocasión</p>
-        <div className="products-grid">
-          {featuredProducts.map((product) => (
-            <motion.div key={product.id} className="product-card rounded-highlight" whileHover={{ scale: 1.03 }}>
-              <img src={product.img} alt={product.name} className="product-image" />
-              <div className="product-discount">{product.discount}</div>
-              {product.freeShipping && (
-                <div className="free-shipping-tag">ENVÍO GRATIS</div>
-              )}
-              <div className="product-info">
-                <h3>{product.name}</h3>
-                <div className="product-pricing">
-                  <span className="current-price">{product.price}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <motion.section className="chatbot-section" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-        <h3>¿Consultas o pedidos personalizados?</h3>
-        <p>Estamos en WhatsApp para ayudarte</p>
-        <motion.button
-          className="contact-button"
-          onClick={handleWhatsApp}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <FaWhatsapp style={{ marginRight: "10px" }} /> Contactanos por WhatsApp
-        </motion.button>
-      </motion.section>
-
+<hr className="sutil-separator" />
       <motion.section
         className="chatbot-section"
         initial={{ opacity: 0 }}
